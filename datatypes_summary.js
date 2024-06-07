@@ -15,7 +15,7 @@ let userEmail;
 const id = Symbol('123')
 const anotherId = Symbol('123')
 
-console.log(id === anotherId);
+// console.log(id === anotherId);
 
 // const bigNumber = 348758475847587887487n
 
@@ -33,7 +33,7 @@ const myFunction = function(){
     console.log("hello World");
 }
 
-console.log(typeof bigNumber);
+// console.log(typeof bigNumber);
 
 // https://262.ecma-international.org/5.1/#sec-11.4.3
 
@@ -53,3 +53,37 @@ console.log(typeof bigNumber);
 // typeof myFunction -> function
 
 // {Also the type of NaN is 'number'}
+
+
+
+
+
+
+
+
+
+
+
+
+
+//*****************************************************
+
+// Stack (Primitive) , Heap (Non-Primitive)
+
+let myYoutubeName = "Amit Pal"
+
+let anotherName = myYoutubeName
+anotherName = "chaiaurcode"
+console.log(anotherName);
+console.log(myYoutubeName);
+
+
+let userOne = {
+    email: "ap218905@gmail.com",
+    upi : "user@ybl"
+}
+
+let userTwo = userOne
+userTwo.email = "user23@gmail.com"
+console.log(userOne.email);
+console.log(userTwo.email);
