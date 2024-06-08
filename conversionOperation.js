@@ -9,6 +9,7 @@ let valueInNumber = Number(score)
 
 // "33" => 33
 // "33abc" => NaN -> type(number)
+// undefined => NaN -> type(number)
 // true => 1; false => 0
 // null => 0 -> type(number)
 
