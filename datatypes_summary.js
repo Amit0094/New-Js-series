@@ -4,6 +4,9 @@
 // String , Number , Boolean , null , undefined , BigInt , Symbol
 
 // statically or dynamically
+// In a statically typed language, data types are defined during compile time and cannot change during runtime. This behavior is because of static type checking. In contrast, dynamic typing allows variables to change their data type during runtime.
+
+// Example :- In a statically typed language like Java, you might declare a variable like this: int x = 10; . The type of x is declared as int and cannot be changed. In a dynamically typed language like Python, you could write x = 10 and later change it to a string with x = "hello" 
 const score = 100
 const scoreValue = 100.3
 const str = "amit"
