@@ -1,5 +1,8 @@
 // Dates
 
+// proposal :- https://tc39.es/proposal-temporal/docs/index.html
+
+
 let myDate = new Date()
 // console.log(myDate.toString()); // return -> { Sat Jun 08 2024 15:26:17 GMT+0530 (India Standard Time) }
 
