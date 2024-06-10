@@ -59,4 +59,39 @@ const users = [
 // console.log(Object.entries(tinderUser)); // Returns an array of key/values of the enumerable properties of an object
 
 
-console.log(tinderUser.hasOwnProperty('isLoggedIn')); // true
+// console.log(tinderUser.hasOwnProperty('isLoggedIn')); // true
+
+
+
+
+
+
+
+
+// *******************************************************************
+
+const course = {
+    coursename: "js in hindi",
+    price: 999,
+    courseInstructor: "hitesh"
+}
+
+// course.courseInstructor
+
+const {courseInstructor : instructor} = course
+// console.log(courseInstructor);
+console.log(instructor);
+
+
+// {
+//     "name" : "amit",
+//     "coursename" : "js in hindi",
+//     "price" : "free"
+// }
+
+
+[
+    {},
+    {},
+    {}
+]
