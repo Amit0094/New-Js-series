@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai aur code</title>
+    <style>
+        body {
+            background-color: #212121;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+
+</body>
+<script>
+    // const div = document.createElement('div')
+    // console.log(div);
+    // div.className = "main"
+    // div.id = Math.floor(Math.random()*10 +1)
+    // div.setAttribute("title","generated title")
+    // div.style.backgroundColor = "green"
+    // div.style.padding = "10px"
+    // // div.innerText = "Chai aur code"
+    // const addText = document.createTextNode("Chai aur node")
+    // div.appendChild(addText)
+
+    // document.body.appendChild(div)
+
+
+    //**********************************************************
+
+    const card = (color, iteration, text) => {
+
+
+
+        for (let i = 0; i < iteration; i++) {
+
+            const div = document.createElement('div')
+            div.className = "main"
+            div.id = Math.floor(Math.random() * 10 + 1)
+            div.setAttribute("title", "generated title")
+            div.style.backgroundColor = color[i]
+            div.style.padding = "10px"
+            div.style.margin = "9px"
+            div.style.width = "40%"
+            // div.innerText = "Chai aur code"
+            const addText = document.createTextNode(text[i])
+                div.appendChild(addText)
+
+
+            document.body.appendChild(div)
+        }
+
+    }
+
+    const textArr = ["Great Kingdoms", "Lion and Tiger", "National meetings", "Black clover", "Diamond KingDom" , "FriendShip is Eveything"]
+
+    const colorArr = ["green" , "orange" , "purple" ,"pink" ,"blue","black"]
+
+    const randomNum = Math.floor(Math.random()*(6-1+1)+1)
+    console.log(randomNum);
+
+    card(colorArr , randomNum , textArr)
+
+</script>
+
+</html>
