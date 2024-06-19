@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events | chai aur code</title>
+    <style>
+        body {
+            background-color: #212221;
+            color: aliceblue;
+        }
+
+        h2 {
+            text-align: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-weight: bold;
+            margin-top: 60px;
+        }
+
+        .pic ul {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        ul li {
+            list-style: none;
+        }
+
+        ul li img {
+            border-radius: 20px;
+            cursor: pointer;
+        }
+
+        #google {
+            color: aliceblue;
+            padding: 6px;
+            border: 2px solid greenyellow;
+            margin-left: 90px;
+            border-radius: 10px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Amazing photos</h2>
+    <div class="pic">
+        <ul class="images">
+            <li><img width="250px" id="pic1"
+                    src="https://images.unsplash.com/photo-1517458776179-baae60e41ef2?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8cGljfGVufDB8fDB8fHww"
+                    alt="image"></li>
+            <li><img width="250px" id="pic2"
+                    src="https://images.unsplash.com/photo-1517458776179-baae60e41ef2?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8cGljfGVufDB8fDB8fHww"
+                    alt="image"></li>
+            <li><img width="250px" id="pic3"
+                    src="https://images.unsplash.com/photo-1517458776179-baae60e41ef2?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8cGljfGVufDB8fDB8fHww"
+                    alt="image"></li>
+            <li><img width="250px" id="pic4"
+                    src="https://images.unsplash.com/photo-1517458776179-baae60e41ef2?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8cGljfGVufDB8fDB8fHww"
+                    alt="image"></li>
+            <li><img width="250px" id="pic5"
+                    src="https://images.unsplash.com/photo-1517458776179-baae60e41ef2?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8cGljfGVufDB8fDB8fHww"
+                    alt="image"></li>
+            <li> <a class="link" target="_blank" id="google" href="/">Open Google</a></li>
+        </ul>
+    </div>
+
+
+
+</body>
+<script>
+
+    // approach - 1 
+    // directly insert into li onclick event
+
+
+    // approach - 2
+    // document.getElementById("pic2").onclick = function(){
+    //     alert("clicked")
+    // }
+
+    // attachEvent()
+    // jQuery - on
+
+
+    // type , timestamp , defaultPrevented
+    // target , toElement , srcElement , currentTarget
+    // clientX , clientY , screenX  , screenY 
+    // altkey , ctrlkey , shiftkey , keyCode
+
+    // approach - 3
+    // document.querySelector(".images").addEventListener('click', (e) => {
+    //     console.log("Clicked inside the ul");
+    // }, false)
+
+    // document.getElementById("pic2").addEventListener('click', (e) => {
+    //     console.log(" Image Clicked");
+    //     e.stopPropagation() // simply it stop the bubbling
+    // }, true)
+
+    // capturing - true
+    // bubbling - false (default)
+
+    // document.getElementById("google").addEventListener("click", (e) => {
+    //     e.preventDefault()
+    //     e.stopPropagation()
+    //     console.log("Google clicked");
+    // }, false)
+
+
+
+    const images = document.querySelector(".images")
+    images.addEventListener('click', (e) => {
+        console.log(e.target.parentNode); // return parent node of target element ( target element means that element which is  clicked by the user)
+        if (e.target.tagName === 'IMG' || e.target.tagName === 'A') {
+            let removeIt = e.target.parentNode
+            removeIt.remove()
+        }
+
+        // removeIt.parentNode.removeChild(removeIt) // here first of all we went to the ul which is parent of the li and then remove the li by passing to them...
+    }, false)
+
+</script>
+
+</html>
