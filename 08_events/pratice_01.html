@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: #212121;
+            color: aliceblue;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Strat should change the Background color every second</h2>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    // let min = 0
+    // let max = 255
+    // let intervalId;
+
+    // document.querySelector("#start").addEventListener("click", () => {
+    //    intervalId =  setInterval(() => {
+    //         const red = Math.floor(Math.random() * (max - min + 1) + min)
+    //         const green = Math.floor(Math.random() * (max - min + 1) + min)
+    //         const blue = Math.floor(Math.random() * (max - min + 1) + min)
+    //         document.querySelector("body").style.backgroundColor = `rgb(${red}, ${green}, ${blue})`
+    //     }, 1000);
+    // })
+    // document.querySelector("#stop").addEventListener("click", () => {
+    //     clearInterval(intervalId)
+    // })
+
+
+    // Another Approach
+
+    function randomColor() {
+        let hexNum = '0123456789ABCDEF'
+        let color = '#'
+
+        for (let i = 0; i < 6; i++) {
+            color += hexNum[Math.floor(Math.random() * 16)]
+        }
+
+        return color
+    }
+
+    let intervalID;
+
+    function startChangingColor() {
+        if (!intervalID) {
+            intervalID = setInterval(changeColor, 1000)
+        }
+
+        function changeColor() {
+            document.body.style.backgroundColor = randomColor()
+            console.log("start");
+        }
+    }
+
+    function stopChangingColor() {
+        clearInterval(intervalID)
+        console.log("stop");
+        intervalID = null
+    }
+
+    document.querySelector("#start").addEventListener('click', startChangingColor)
+    document.querySelector("#stop").addEventListener('click', stopChangingColor)
+
+</script>
+
+</html>
