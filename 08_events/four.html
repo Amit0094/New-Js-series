@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+    <style>
+        a {
+            color: aliceblue;
+        }
+
+        li {
+            cursor: pointer;
+        }
+
+        .parent {
+            background-color: aqua;
+            padding: 15px;
+            color: black;
+        }
+
+        .parent-child {
+            background-color: beige;
+            padding: 15px;
+            color: black;
+        }
+    </style>
+</head>
+
+<body style="background-color: #212121 ; color: aliceblue;">
+    <h2>Welcome</h2>
+    <!-- <button id="btn">Save</button>
+    <p>TimeStamp:- <span id="time">-</span></p>
+
+    <p id="para"></p> -->
+
+
+
+    <!-- <a id="link1" href="#link1">Visting Link</a>
+    <a id="link2" href="#link2">Visting Link 2</a>
+    <p id="log"></p> -->
+
+
+
+    <!-- <div class="parent">
+        clicked
+        <div class="parent-child">
+            child clicked
+        </div>
+    </div>
+
+    <p id="para"></p>
+    <button id="reset">Reset</button> -->
+
+</body>
+<script>
+    // The timeStamp read-only property of the Event interface returns the time (in milliseconds) at which the event was created.
+    // function getTime(){
+    //     const time = document.getElementById("time")
+    //     time.firstChild.nodeValue = event.timeStamp
+    // }
+    // window.addEventListener('keypress',getTime,false)
+
+
+
+
+    // const para = document.getElementById("para")
+    // document.getElementById("btn").addEventListener('click',()=>{
+    //     // let currentTime = Date.now() // return time in miliseconds ( Yes, Date.now() returns the current time in milliseconds since the Unix epoch (January 1, 1970, 00:00:00 UTC). )
+    //     let currentTime = new Date()
+    //     para.innerHTML = `Clicked: ${currentTime.getHours()}:${currentTime.getMinutes()}:${currentTime.getSeconds()}`
+    // })
+
+
+
+
+    // function getEventType(event) {
+    //     const btn = document.getElementById("btn");
+    //     btn.innerText = `${event.type}\n${btn.innerText}`;
+    // }
+    // so 'type' simply tell us about the event currently perform on element or whole document
+    // document.addEventListener("mouseenter", getEventType, false)
+
+
+
+
+
+    // const link1 = document.getElementById('link1')
+    // const link2 = document.getElementById('link2')
+
+    // function StopDefault(event){
+    //     event.preventDefault()
+    // }
+
+    // function log(event){
+    //     let log = document.getElementById('log')
+    //     if(event.target.tagName === 'A'){
+    //         log.innerText = event.defaultPrevented ? "sorry you can't click here":"visiting link"
+    //     }
+    // }
+
+    // link2.addEventListener('click',StopDefault)
+    // window.addEventListener('click',log)
+
+
+
+
+
+    // const ul = document.createElement('ul')
+    // const li1 = document.createElement('li')
+    // li1.innerText = "First"
+    // const li2 = document.createElement('li')
+    // li2.innerText = "second"
+    // document.body.appendChild(ul)
+    // ul.appendChild(li1)
+    // ul.appendChild(li2)
+
+    // function hidden(event){
+    //     // console.log(event.currentTarget); // return ul in this case
+    //     if(event.target.tagName === "LI"){
+    //         event.target.style.display = "none"
+    //     }
+    // }
+
+    // ul.addEventListener('click',hidden,false)
+
+
+
+
+
+
+
+    // const parent = document.querySelector('.parent')
+    // let output = document.getElementById('para')
+
+    // parent.addEventListener('click', (event) => {
+    //     const currentTarget = event.currentTarget.getAttribute("class"); // The currentTarget read-only property of the Event interface identifies the element to which the event handler has been attached.
+    //     const target = event.target.getAttribute("class");
+    //     output.textContent = `Current target: ${currentTarget} , \n\n\n`;
+    //     output.textContent += `\nTarget: ${target}`;
+    // })
+
+    // const reset = document.getElementById('reset')
+    // reset.addEventListener('click', () => document.location.reload())
+
+</script>
+
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: #212121;
+            color: aliceblue;
+        }
+
+    </style>
+</head>
+<body>
+    <h2>Welcome</h2>
+    <!-- <h4>move mouse and see your coordinate on the screen</h4>
+    <p id="log"></p> -->
+
+
+
+    <!-- <h4>Click anywhere on the screen to see either alt key is pressed or not</h4>
+    <p id="log"></p> -->
+
+
+    <!-- <h4>move mouse anywhere to see ctrl key is pressed or not</h4>
+    <p id="log"></p> -->
+
+
+
+    <!-- <h4>move mouse anywhere to see shift key is pressed or not</h4>
+    <p id="log"></p> -->
+
+    <!-- <p id="log"></p> -->
+
+
+
+    <form>
+        <label for="name">Name : </label>
+        <input type="text" id="name"><br> <br>
+        <label for="password">Password : </label>
+        <input type="text" id="password">
+    </form>
+</body>
+<script>
+    // clientX and clientY will show the pointer position relative to the browser window's viewport.
+    // screenX and screenY will show the pointer position relative to the entire screen.
+    // const output = document.getElementById('log')
+    // document.addEventListener("mousemove",(event)=>{
+    //     output.textContent = `
+    //      ClientX = ${event.clientX} , 
+    //      ClientY = ${event.clientY} , 
+    //      ScreenX = ${event.screenX} ,
+    //      ScreenY = ${event.screenY}
+    //     `
+    // })
+
+
+
+
+
+
+    // const output = document.getElementById("log")
+    // document.addEventListener('click',(event)=>{
+    //     output.innerText = `alt key is pressed : ${event.altKey} ,  \n ${output.innerText}`
+    // })
+    // means when we simply click altkey during this click event it gave a true value otherwise it gave a false value
+
+
+
+
+
+
+    // const output = document.getElementById("log")
+    // document.addEventListener('mousemove',(event)=>{
+    //     output.innerText = `alt key is pressed : ${event.ctrlKey} ,  \n ${output.innerText}`
+    // })
+    // same as alt key when it pressed during mouse move on screen it gave a true value otherwise it return false value
+
+
+
+
+    // const output = document.getElementById("log")
+    // document.addEventListener('mousemove',(event)=>{
+    //     output.innerText = `alt key is pressed : ${event.shiftKey} ,  \n ${output.innerText}`
+    // })
+    // same  as both
+
+
+
+
+
+    // const log = document.getElementById('log')
+    // document.addEventListener('keypress',(event)=>{
+    //     log.textContent = `${event.keyCode} , ${event.code} \n`
+    // })
+
+
+
+
+
+
+    const form = document.querySelector("form")
+    const name = document.getElementById('name')
+    const password = document.getElementById('password')
+
+    // password.addEventListener('focus',()=>{
+    //     password.style.backgroundColor = "pink"
+    // })
+    // password.addEventListener('blur',()=>{
+    //     password.style.backgroundColor = ""
+    // })
+
+
+    // focus and blur apply on form doesn't work 
+    // for bubbling we can use focusin event rather than focus
+
+    form.addEventListener('focusin',(event)=>{  // bubbling
+        event.target.style.backgroundColor = "pink"
+    })
+    form.addEventListener('focusout',(event)=>{ // bubbling
+        event.target.style.backgroundColor = ""
+    })
+
+</script>
+</html>
