@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: #212121;
+            color: aliceblue;
+        }
+    </style>
+</head>
+<body>
+    <h2>Chai aur code</h2>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    const sayAmit = ()=>{ 
+        console.log('Amit');
+    }
+
+    const changeText = ()=>{
+        document.querySelector('h2').innerHTML = "Welcome Back"
+    }
+
+    // setTimeout(sayAmit, 2000) // run only once after the time given , which is in miliseconds
+
+   const setTimeOutID =  setTimeout(changeText,2000)
+
+    document.querySelector("#stop").addEventListener('click',()=>{
+        clearTimeout(setTimeOutID)
+        console.log('stopped');
+    })
+</script>
+</html>
