@@ -1,0 +1,131 @@
+@font-face {
+    font-family: font;
+    src: url(./NeueHaasDisplayMediu.ttf);
+}
+@font-face {
+    font-family: font-thin;
+    src: url(./NeueHaasDisplayThin.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+.main {
+    width: 100%;
+    height: 100vh;
+    /* background-color: #1d1d1d; */
+    background: linear-gradient(orange , blue);
+}
+
+nav {
+    width: 100%;
+    height: 70px;
+    background-color: rgb(0, 255, 162);
+    color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2vw;
+}
+
+.part-1 h2 {
+    font-family: font;
+    font-weight: bold;
+    font-size: 35px;
+}
+
+.part-2 a {
+    margin: 0 1vw;
+    text-decoration: none;
+    color: #000;
+    border: 1px solid black;
+    border-radius: 50px;
+    padding: 0.5vw 1vw;
+}
+
+#home{
+    background-color: #000;
+    color: aliceblue;
+}
+
+.container {
+    width: 100%;
+    height: calc(100% - 70px);
+    color: aliceblue;
+    position: relative;
+}
+
+.container h3 {
+    font-family: font;
+    font-weight: bold;
+    font-size: 25px;
+    position: absolute;
+    left: 4%;
+    top: 5%;
+}
+
+.card-container {
+    width: 100%;
+    height: 100%;
+    padding-top: 6vw;
+    padding-left: 7vw;
+    padding-right: 1vw;
+    display: flex;
+    justify-content: center;
+    gap: 1vw;
+    flex-wrap: wrap;
+}
+
+.card {
+    width: 20%;
+    height: 35%;
+    /* background-color: rgb(0 255 162 / 81%); */
+    /* background-color: rgba(184, 183, 183, 0.781); */
+    background: rgba(0,0,0,0.5);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 0.2vw;
+}
+
+.img {
+    width: 100%;
+    height: 80%;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.card h4 {
+   margin-top: 0.2vw;
+   font-family: font;
+   font-weight: bold;
+   font-size: 1vw;
+   text-transform: uppercase;
+}
+.card a{
+    text-decoration: none;
+    color: #000;
+    font-family: font;
+    font-size: 0.9vw;
+    border: 1px solid #000;
+    padding:  0 10px;
+    background-color: greenyellow;
+    border-radius: 10px;
+}

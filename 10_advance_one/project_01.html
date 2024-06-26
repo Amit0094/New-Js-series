@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card | API</title>
+    <style>
+        body {
+            background-color: #212121;
+            color: aliceblue;
+        }
+
+        .main {
+            width: 300px;
+            height: 400px;
+            border-radius: 15px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            margin-bottom: 15px;
+            background-color: rgba(28, 184, 211, 0.549);
+        }
+
+        .imageContainer {
+            width: 50%;
+            height: 40%;
+            border-radius: 15px;
+            margin-left: 70px;
+            margin-top: 30px;
+        }
+
+        .info {
+            width: 80%;
+            height: 50%;
+            margin-left: 30px;
+        }
+
+        .name {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-weight: bold;
+            font-size: 19px;
+            text-transform: uppercase;
+            color: #000;
+            text-align: center;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+</body>
+<script>
+    function data() {
+        const URL = 'https://api.github.com/users/Amit0094'
+        const hxr = new XMLHttpRequest()
+        hxr.open('GET', URL)
+        hxr.onreadystatechange = function () {
+            if (hxr.readyState === 4) {
+                const data = JSON.parse(this.responseText)
+                handleData(data)
+            }
+        }
+        hxr.send()
+    }
+
+    const handleData = (data) => {
+        console.log(data);
+        let div = document.createElement('div')
+        div.classList.add('main')
+        let imageContainer = document.createElement('div')
+        imageContainer.classList.add('imageContainer')
+        imageContainer.style.backgroundImage = `URL(${data.avatar_url})`
+        let Info = document.createElement('div')
+        Info.classList.add('info')
+        let h2 = document.createElement('h2')
+        let p = document.createElement('p')
+        p.classList.add('repo')
+        p.innerHTML = `Repository : ${data.
+            public_repos
+            } , Followers : ${data.followers
+} `
+        h2.classList.add('name')
+        h2.innerHTML = `<h2>${data.name}</h2>`
+        Info.appendChild(h2)
+        Info.appendChild(p)
+        div.appendChild(imageContainer)
+        div.appendChild(Info)
+        document.body.appendChild(div)
+    }
+    data()
+
+
+
+</script>
+
+</html>
