@@ -1,3 +1,6 @@
+// javascript does have classes . this feature was introduced with ECMAScript 2015 specification (often referred to as ES6). However , it's important to note that javascript is primarily a prototype-based language  , and its classes are primarily syntactic sugar over existing prototype-based inheritance mechanisms .
+
+
 const user = {
     username : "Amit",
     signedIn : true,
@@ -6,12 +9,19 @@ const user = {
     getUserDetails: function(){
         // console.log(`Username : ${this.username}`);
         console.log(this);
+    },
+
+    getLoginCount:()=>{
+        console.log(this);  // {}
+        console.log(this.loginCount); // undefined
     }
 }
 
 // console.log(user.getUserDetails());
 // console.log(this); // return ->  {} , but when i run this same program in browser it return a window object which contains a lot of methods...
 
+// console.log(user.getLoginCount());
+// console.log(user.getUserDetails());
 
 
 
@@ -35,8 +45,8 @@ function User(username , loginCount , isLoggedIn){
 
 const userOne = new User("Amit" , 12 , true)
 const userTwo = new User("chaiAurCode" , 11 , false)
-console.log(userOne.constructor);
-console.log(userOne instanceof User);
+// console.log(userOne.constructor);
+// console.log(userOne instanceof User);
 // console.log(userTwo);
 
 // when you use new keyword there are following steps will happen :
