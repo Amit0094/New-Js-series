@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React</title>
+</head>
+<body>
+    <button>Button Clicked</button>
+</body>
+<script>
+    class React {
+        constructor(){
+            // Here, this refers to the instance of the React class being created.
+            this.library = 'React'
+            // Again, this refers to the instance of the React class.
+            this.server = 'https://localhost:3000'
+
+            // Requirement
+            
+            // this.handleClick accesses the handleClick method on the React instance.
+
+
+
+            document.querySelector('button').addEventListener('click',this.handleClick.bind(this)) //  // Bind the handleClick method to the current instance
+        }
+
+        handleClick(){
+            console.log(`Button Clicked`);
+            // In this context, this refers to the element that fired the event, which is the button. This happens because the event listener was added without binding this, so the default binding rule (**when bind is not apply)
+            console.log(this); // this.handleClick accesses the handleClick method on the React instance.
+        }
+    }
+
+    const app = new React()
+</script>
+</html>
+
+
+
+
+
+
+
+
+<!--What Happens Internally
+1.Binding Process:
+
+-> this.handleClick.bind(this) creates a new function.
+
+-> This new function has its this permanently set to the React instance.
+
+
+2.New Bound Function:
+
+-> The bound function (this.boundHandleClick) is assigned as the event handler.
+When the button is clicked, this bound function is invoked. -->
+
+
+<!-- code part -->
+
+<!-- this.boundHandleClick = this.handleClick.bind(this); -->
+
+<!-- document.querySelector('button').addEventListener('click', this.boundHandleClick); -->
