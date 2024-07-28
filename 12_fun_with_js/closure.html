@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>closure</title>
+    <style>
+        body{
+            background-color: #000;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <button id="orange">Orange</button>
+    <button id="green">Green</button>
+</body>
+<script>
+    // function init(){
+    //     let name = 'Mozilla'
+    //     function displayName(){
+    //         console.log(name);
+    //     }
+
+    //     displayName()
+    // }
+
+    // init()
+
+
+    // function outer(){
+    //     let username = 'Amit'
+    //     // console.log(secret); // *Error
+    //     function inner(){
+    //         let secret = 'my123'
+    //         console.log('Inner :',username);
+    //     }
+    //     function innerTwo(){
+    //         console.log('InnerTwo :',username);
+    //         // console.log(secret); // *Error
+    //     }
+    //     inner()
+    //     innerTwo()
+    // }
+    // outer()
+    // console.log('Too Outer :',username); // *Error
+
+
+
+
+    // function makeFunc(){
+    //     const name = 'Mozilla'
+    //     function displayName(){
+    //         console.log(name);
+    //     }
+
+    //     return displayName
+    // }
+
+    // const myfunc = makeFunc()
+    // myfunc()
+
+
+
+</script>
+<script>
+    const orangeBtn = document.getElementById('orange')
+    const greenBtn = document.getElementById('green')
+
+    // orangeBtn.addEventListener('click',()=>{
+    //     document.body.style.backgroundColor = 'orange'
+    // })
+    // greenBtn.addEventListener('click',()=>{
+    //     document.body.style.backgroundColor = 'green'
+    // })
+
+
+
+
+    function clickHandler(color){
+        // document.body.style.backgroundColor = `${color}`
+
+        return function(){
+            document.body.style.backgroundColor = `${color}`
+        }
+    }
+
+    orangeBtn.addEventListener('click',clickHandler('orange'))
+    greenBtn.addEventListener('click',clickHandler('green'))
+
+</script>
+</html>
